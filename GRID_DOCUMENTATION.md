@@ -1,39 +1,33 @@
-# Grid documentation update — 23 October 2026
+# Grid documentation — 23 October 2026
 
 ## Scope
 
-Adds `grid.html`, `grid.css` and `grid-demo.js`. These are website explanations only, not instrument code, a MIDI controller or a live norns connection. Advanced source is not distributed.
+`grid.html`, `grid.css` and `grid-demo.js` explain the interface and accepted nudge design. They contain no audio, MIDI, live norns connection or TMC Advanced source.
 
-## Evidence used
+## Evidence and status
 
-- 28 September user requirement: Anchor should remain brightest.
-- 30 September user-approved melodic nudge: valid nearby pitch attraction, three accepted notes, weakening each use, fifteen-second expiry, replacing rather than stacking; no change to already-sounding notes or TRI; IDLE neither wakes nor consumes the note allowance. Wall-clock expiry still applies.
-- 30 September accompanying implementation report: short tap selects a lane; a hold of at least 0.65 seconds commits a nudge on release; double-tap uses short taps at most 0.30 seconds, gap at most 0.35 seconds. Shimmer uses current Field Shimmer brought into the scale, one use and fifteen-second expiry; Shimmer/Nudge replace one another. These thresholds are historical implementation reports, not a current code audit.
-- Later 30 September user report: grid working; native 128 testing still to follow.
-- 1–2 October implementation/layout records: seven voice rows, shared focused ARP display lane, globals in row eight. Separate ARP voices and audio outputs are not combined by this display.
-- 12 October: a two-bank TMC/Bitbox mixer is planned later, not treated as implemented here.
+- **User constraint, 28 September:** Anchor should remain brightest. Suggested brightness ranges are not treated as verified TMC constants.
+- **User-approved specification, 30 September 16:41:** temporary attraction, not Anchor relocation; up to three accepted notes or fifteen seconds; weakening on use; replacement, not stacking; no immediate note, no waking IDLE, no TRI change and no change to an already-sounding note.
+- **Implementation report, 30 September 16:41:** held press >=0.65s, committed on release; double-tap uses taps <=0.30s and gap <=0.35s; one-use Shimmer and Nudge mutually replace. Historical report, not a current source audit.
+- **User test report, 30 September 18:37:** working on the 8x8 controller; native 128 testing still to follow.
+- **Assistant layout proposal, 30 September 18:40:** Drone/SubHarm/Rings Cells/Tonal 1/Tonal 2/Tonal 3/focused ARP/global. The exact order and shared ARP display are labelled as a proposal; recovered evidence does not establish final adoption.
+- **12 October plan:** later two-bank TMC/Bitbox mixer; not presented as completed.
 
-Older long-press-to-relocate-Anchor suggestions are not published as the refined nudge mapping. Generic numeric LED levels are not asserted as current TMC constants. Exact global column positions are omitted pending code inspection.
+The prior claim that 1–2 October records established the final seven-lane map has been corrected. No exact global button column assignments are published. Older long-press-to-move-Anchor descriptions are not substituted for the later user-approved Nudge specification.
 
-## Visual and interaction checks to maintain
+## Website checks
 
-- The map creates exactly 128 cells: sixteen columns, eight rows; no knobs.
-- The Anchor is brighter than role-detail and nudge indicators.
-- The nudge example is manually stepped, with no real-time timer, audio or MIDI.
-- Accepted-note budget changes only for PLAY, not IDLE.
-- A replacement starts a new budget rather than accumulating it.
-- Expiry clears the pending influence even in IDLE.
-- Text describes the complete rules without requiring the interactive example.
+The GitHub Pages deployment for commit b2f0bb94dc46cb3d5a35fa6ea789256812cbfb79 succeeded. Its exact published artifact was downloaded for local browser testing. At widths 1440, 390 and 320 pixels: 128 grid cells rendered, the homepage Grid feature and link were present, and there was no document-width overflow. Browser page errors were absent. External font requests were unavailable in the test environment, so typography used fallback fonts during these checks.
 
-## Homepage integration
+Interactive checks passed: queue=3; accepted note decrements; IDLE does not decrement; replacement resets rather than adds; manual expiry clears in IDLE; three accepted notes clear; focused view has one Anchor; reading layout activates without overflow. These check the website illustration, not TMC software or hardware.
 
-`_includes/tmc-home-base.html` retains the exact approved homepage before this update. The small `index.html` Liquid wrapper inserts a static Grid navigation link, an accessible mobile navigation layout and a Grid feature after the main AI/dyslexia feature. GitHub Pages already uses Jekyll; its output remains ordinary HTML. To change the underlying homepage, edit the include; to change these inserts, edit `index.html`.
+## Integration
 
-The shared `reader.js` adds a Grid link to the other article menus when JavaScript is enabled; the homepage and Grid article have static links. Existing reading-layout storage is preserved.
+The approved homepage is retained at `_includes/tmc-home-base.html`. The small `index.html` Liquid wrapper adds the Grid link and feature after the main AI/dyslexia feature. GitHub Pages builds ordinary HTML. The shared `reader.js` adds a Grid menu link to other articles; the homepage and Grid article have static links.
 
 ## Primary hardware references
 
-- https://monome.org/docs/norns/reference/grid — 0–15 API brightness range.
-- https://monome.org/docs/grid/editions/ — hardware dimensions and edition-specific lighting.
+- https://monome.org/docs/norns/reference/grid — the API accepts brightness 0–15.
+- https://monome.org/docs/grid/editions/ — hardware size and edition-specific lighting.
 
-These establish hardware/platform facts, not TMC-specific mappings.
+Hardware documentation is not evidence for TMC-specific mappings.
