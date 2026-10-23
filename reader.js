@@ -1,5 +1,14 @@
-/* Optional reading layout. The article remains complete without JavaScript. */
+/* Shared article enhancements. Text and ordinary links remain usable without JS. */
 (() => {
+  'use strict';
+  const nav = document.querySelector('header nav');
+  if (nav && !nav.querySelector('a[href="grid.html"]')) {
+    const link = document.createElement('a');
+    link.href = 'grid.html'; link.textContent = 'Grid';
+    const architecture = nav.querySelector('a[href="architecture.html"]');
+    if (architecture) architecture.insertAdjacentElement('afterend', link);
+    else nav.appendChild(link);
+  }
   const button = document.querySelector('[data-reading-toggle]');
   if (!button) return;
   button.hidden = false;
