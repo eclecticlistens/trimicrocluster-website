@@ -37,7 +37,7 @@ No TMC Advanced code, private backup or unapproved sample libraries are stored i
 
 ## Visuals
 
-The aluminium and warm orange palette is an artistic identity derived from discussions of norns and grid hardware. Monome grids vary by edition. The homepage uses the approved photographic-style Grid rendering stored in `assets/images/grid-photo.webp`. It is an illustrative visual, not a verified map of the installed instrument's controls or LED states; see [Grid & Visual Feedback](grid.html) for that distinction.
+The aluminium and warm orange palette is an artistic identity derived from discussions of norns and grid hardware. Monome grids vary by edition. The homepage uses the misted Grid scene in `assets/images/grid-atmosphere.webp`, with its reflection and soft edges blended into the page by `atmosphere.css`. The earlier approved crop remains in `assets/images/grid-photo.webp`. These are illustrative visuals, not verified maps of the installed instrument's controls or LED states; see [Grid & Visual Feedback](grid.html) for that distinction.
 
 ## Maintenance
 
