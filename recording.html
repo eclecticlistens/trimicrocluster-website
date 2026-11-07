@@ -32,8 +32,13 @@
 .detail-panel th{font-size:12px}
 .flow-note{padding:12px 15px;background:rgba(255,255,255,.6);border-radius:9px;line-height:1.7;font-size:13px}
 .wiring-photo{margin:17px 0 22px;padding:12px;background:rgba(255,255,255,.57)}.wiring-photo img{width:100%;max-width:840px;height:auto;display:block;margin:auto;border-radius:8px}.wiring-photo figcaption{font-size:12px;color:#62706a;line-height:1.65;padding:11px 7px 0}
+.scope-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:22px 0 30px}
+.scope-photo{margin:0;padding:11px}
+.scope-photo a{display:block}
+.scope-photo img{width:100%;height:auto;display:block;border-radius:9px}
+.scope-photo figcaption{padding:10px 5px 2px;color:#58655e;font-size:13px;line-height:1.6}
 .reader-footnote{color:#647069;font-size:13px}
-@media(max-width:710px){.record-intro{grid-template-columns:1fr}.performance-photo{max-width:100%}.voice-pair{grid-template-columns:1fr}.release-strip{padding:19px}.detail-panel{padding:14px}}
+@media(max-width:710px){.record-intro{grid-template-columns:1fr}.performance-photo{max-width:100%}.voice-pair,.scope-gallery{grid-template-columns:1fr}.release-strip{padding:19px}.detail-panel{padding:14px}}
 </style>
 </head>
 <body>
@@ -79,6 +84,20 @@
 <p>The result can move between a blended, heartbeat-like pulse and passages in which more notes and harmonics become audible as the SubHarm LPG filter opens. That transition is a musical gesture in its own right. The yellow and red cables identify the two audio routes in this particular patch photograph, not a colour scheme that has to be followed when repatching.</p>
 <h2 id="scope">Seeing the envelopes</h2>
 <p>A Tektronix TDS 2012B oscilloscope was connected <strong>directly to the two BugBrand envelope outputs</strong>, so the traces show the slow control-voltage shapes rather than the audio waves themselves.</p>
+<div class="scope-gallery" aria-label="Oscilloscope photographs of the two envelope outputs">
+<figure class="scope-photo glass">
+<a href="assets/images/tmc-drone-subharm-env-overview.webp" target="_blank" rel="noopener" aria-label="Open larger oscilloscope overview photograph">
+<img src="assets/images/tmc-drone-subharm-env-overview.webp" width="460" height="380" loading="lazy" alt="Tektronix oscilloscope screen showing several repeated yellow narrow Drone envelope pulses alongside broader blue SubHarm envelope pulses at a one-second-per-division timebase.">
+</a>
+<figcaption><strong>Overview · 1 s/div.</strong> Both envelopes repeat together, but their shapes and decays differ. Select the image for a larger view.</figcaption>
+</figure>
+<figure class="scope-photo glass">
+<a href="assets/images/tmc-drone-subharm-env-closeup.webp" target="_blank" rel="noopener" aria-label="Open larger oscilloscope close-up photograph">
+<img src="assets/images/tmc-drone-subharm-env-closeup.webp" width="460" height="338" loading="lazy" alt="Closer oscilloscope view at 500 milliseconds per division: a yellow Drone envelope rises and falls sharply while the blue SubHarm envelope has a short plateau and a long decay.">
+</a>
+<figcaption><strong>Closer view · 500 ms/div.</strong> The Drone pulse is brief; SubHarm has a longer, gradual release.</figcaption>
+</figure>
+</div>
 <div class="voice-pair">
 <section class="voice-card glass"><span class="voice-label">Oscilloscope CH1 · yellow trace</span><h3>Drone envelope</h3><p>A narrow, sharp pulse that rises quickly and drops away almost immediately. This short envelope helps give the Drive VCA path its precise articulation.</p></section>
 <section class="voice-card glass"><span class="voice-label">Oscilloscope CH2 · blue trace</span><h3>SubHarm envelope</h3><p>A broader response with a short rounded top and a much longer decay. Through the LPG in filter mode it produces a more gradual change in the tonal material that passes through.</p></section>
