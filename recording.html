@@ -1,88 +1,109 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e5e3df">
-<meta name="description" content="TriMicroCluster Advanced recording notes: BugBrand Drone/SubHarm processing, TP-7 recording, and a proposed Bitwig, SSL 2+ and Fat Track mastering insert.">
-<title>Recording &amp; Mastering | TriMicroCluster</title>
-<link rel="stylesheet" href="docs.css"><link rel="stylesheet" href="editorial.css"><script defer src="reader.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e5e3df">
+<meta name="description" content="Inside a TriMicroCluster recording: two sustained voices, a shared pulse, analogue modulation, live mixing and the journey towards a release.">
+<title>Two Voices, One Pulse | TriMicroCluster</title>
+<link rel="stylesheet" href="docs.css">
+<link rel="stylesheet" href="editorial.css">
+<script defer src="reader.js"></script>
 <style>
-.route-status{padding:15px 20px;margin:20px 0 28px;border-left:4px solid #b86931;border-radius:9px;background:rgba(255,247,234,.7)}
-.route-status strong{display:block}
-.signal-box{margin:25px 0 32px;padding:25px 27px}
-.signal-box h3{margin:0 0 6px}
-.signal-box figcaption{font-size:12px;line-height:1.6;color:#676f6b;margin-top:20px}
-.signal-node{padding:12px 17px;background:rgba(255,255,255,.79);border:1px solid rgba(75,82,78,.23);border-radius:10px}
-.signal-node strong{display:block;line-height:1.4}
-.signal-node small{display:block;color:#5f6863;line-height:1.5}
-.signal-path{--route:#53728e;display:flex;gap:15px;padding:9px 0 9px 16px;align-items:center}
-.signal-path::before{content:"↓";color:var(--route);font-size:26px;font-weight:700}
-.signal-path span{font-size:13px;line-height:1.5}
-.signal-path.blue{--route:#376fa9}.signal-path.orange{--route:#b86e32}.signal-path.purple{--route:#8761a2}.signal-path.green{--route:#338369}
-.signal-group{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:20px 0}
-.signal-group .signal-node{min-width:0}
-.signal-group .tag{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#87542d;font-weight:700}
-.route-table-wrap{overflow-x:auto}
-.route-table{width:100%;border-collapse:collapse;font-size:13px}
-.route-table th,.route-table td{padding:12px 9px;border-bottom:1px solid rgba(80,83,79,.2);text-align:left;vertical-align:top}
-.route-table th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#5f6660}
-.route-table td:first-child{font-weight:700}
-.small-note{font-size:13px;color:#616c65}
-@media(max-width:690px){.signal-box{padding:18px}.signal-group{grid-template-columns:1fr}.route-table th,.route-table td{padding:9px 6px}}
-</style></head>
-<body><a class="skip-link" href="#article">Skip to the article</a>
+.record-intro{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:34px;align-items:start;margin:8px 0 27px}
+.record-intro p{margin-top:0}
+.performance-photo{margin:0;padding:10px 10px 13px;max-width:265px}
+.performance-photo img{width:100%;height:auto;display:block;border-radius:10px}
+.performance-photo figcaption{font-size:12px;color:#65706a;line-height:1.55;padding:10px 7px 0}
+.voice-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:24px 0}
+.voice-card{padding:21px 23px}
+.voice-card h3{font-size:27px;margin:3px 0 9px}
+.voice-card .voice-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#9b653b;font-weight:700}
+.voice-card .voice-route{font-size:14px;font-weight:700;line-height:1.7}
+.voice-card p{font-size:14px;margin:7px 0 0;color:#566059}
+.release-strip{margin:26px 0;padding:24px 29px;border-left:3px solid #b86931}
+.release-strip h3{margin:0 0 8px}
+.release-strip p{margin:0}
+.detail-panel{margin:22px 0;padding:18px 22px}
+.detail-panel summary{font-weight:700;cursor:pointer}
+.detail-panel p{font-size:14px}
+.detail-panel table{width:100%;border-collapse:collapse;font-size:13px;margin-top:16px}
+.detail-panel th,.detail-panel td{padding:10px 8px;border-bottom:1px solid rgba(70,80,73,.18);text-align:left;vertical-align:top}
+.detail-panel th{font-size:12px}
+.flow-note{padding:12px 15px;background:rgba(255,255,255,.6);border-radius:9px;line-height:1.7;font-size:13px}
+.reader-footnote{color:#647069;font-size:13px}
+@media(max-width:710px){.record-intro{grid-template-columns:1fr}.performance-photo{max-width:245px}.voice-pair{grid-template-columns:1fr}.release-strip{padding:19px}.detail-panel{padding:14px}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#article">Skip to the article</a>
 <header><div class="head frame"><a class="brand" href="index.html"><strong>Tri</strong><i>Micro</i>Cluster</a><button class="read-toggle" data-reading-toggle type="button" aria-pressed="false" hidden>Reading layout</button><nav aria-label="Site navigation"><a href="instrument.html">Instrument</a><a href="architecture.html">Architecture</a><a href="grid.html">Grid</a><a href="process.html">AI &amp; Dyslexia</a><a href="editions.html">Editions</a><a href="journal.html">Journal</a><a href="research.html">Research</a><a href="listen.html" aria-current="page">Listen</a></nav></div></header>
-<main class="frame"><div class="breadcrumbs"><a href="index.html">Home</a> / <a href="listen.html">Listen</a> / Recording &amp; mastering</div>
-<section class="hero"><p class="eyebrow">Advanced · Hardware recording notes · November 2026</p><h1>From sound to recording.</h1><p class="lede">A record of the analogue processing used for Drone and SubHarm, and a proposed hybrid mastering route that preserves the dynamics of a live stereo performance.</p></section>
-<div class="columns"><aside class="toc glass" aria-label="On this page"><h2>On this page</h2><a href="#voices">Two BugBrand signal paths</a><a href="#pulse">Shared pulse, separate envelopes</a><a href="#master">Mastering signal flow</a><a href="#cables">Physical cabling</a><a href="#bitwig">Bitwig configuration</a><a href="#verify">Checks before release</a><a href="#release">Listen &amp; support</a></aside>
+<main class="frame">
+<div class="breadcrumbs"><a href="index.html">Home</a> / <a href="listen.html">Listen</a> / Behind the recording</div>
+<section class="hero">
+<p class="eyebrow">Inside a recording · November 2026</p>
+<h1>Two voices, one pulse.</h1>
+<p class="lede">A drone and a subharmonic voice move slowly through analogue circuits. They share a point of departure, but each follows its own changing shape.</p>
+</section>
+<div class="columns">
+<aside class="toc glass" aria-label="On this page"><h2>On this page</h2><a href="#performance">The performance</a><a href="#voices">The two voices</a><a href="#pulse">One pulse, different motion</a><a href="#recorded">Capturing the mix</a><a href="#release">Listening &amp; release</a><a href="#details">Technical signal flow</a></aside>
 <article class="prose" id="article">
-<h2 id="voices">Two voices, two analogue paths</h2>
-<div class="route-status"><strong>Status: artist's notes from a recorded performance</strong>These paths document one configuration, not a fixed or required TMC patch. Additional details of the exact envelope waveform and pulse source have not yet been verified.</div>
-<figure class="signal-box glass"><h3>Before the TX-6 mix</h3><p class="small-note">The audio paths are independent. The envelopes act on different destinations.</p>
-<div class="signal-group">
-<section class="signal-node"><span class="tag">SubHarm · audio</span><strong>SubHarm → BugBrand PreAmp → LPG → TX-6</strong><small>The LPG shapes the subharmonic signal after the preamplifier.</small></section>
-<section class="signal-node"><span class="tag">SubHarm · modulation</span><strong>Envelope A → LPG MOD</strong><small>Slow envelope modulation at the LPG's MOD input.</small></section>
-<section class="signal-node"><span class="tag">Drone · audio</span><strong>Drone → BugBrand PreAmp → Drive VCA</strong><small>The processed voice then joins the mixing chain; the final output port is not specified in these notes.</small></section>
-<section class="signal-node"><span class="tag">Drone · modulation</span><strong>Envelope B → Drive VCA CV2</strong><small>A different slow envelope controls CV2 on the Drive VCA.</small></section>
-</div><figcaption>The two modulation inputs are not interchangeable: SubHarm uses LPG MOD, while Drone uses Drive VCA CV2.</figcaption></figure>
-<h2 id="pulse">One pulse, two evolving envelopes</h2>
-<p>The two envelopes shared the <strong>same pulse</strong> but remained separate modulation sources, each with its own slow setting. The artist described the movement as a <em>“buffet waveform”</em>; its precise waveform or modulation source still needs confirming, so no specific oscillator shape is asserted here.</p>
-<p>Musically, that arrangement can relate the two voices in time without forcing them to change in exactly the same way. The preamplifiers, LPG and Drive VCA remain part of the instrument's performable harmonic character, not merely an after-the-fact mastering effect.</p>
-<p class="small-note"><strong>Visual evidence to add:</strong> an oscilloscope photograph of the actual envelope/modulation shape when available. No waveform has been reconstructed or inferred for this page.</p>
-<h2 id="master">Proposed digital compressor inside the analogue master</h2>
-<div class="route-status"><strong>Status: proposed / not yet hardware-tested</strong>The TP-7 recording workflow is established. The additional Bitwig compressor in the Fat Track's stereo master insert loop is a suggested configuration to test at conservative levels.</div>
-<figure class="signal-box glass">
-<h3>Colour-coded mastering flow</h3>
-<p class="small-note">Read down. The orange and purple connections form one send-and-return loop.</p>
-<div class="signal-node"><strong>Mac · Bitwig Track A</strong><small>Original stereo WAV transferred from the TP-7. Playback to SSL hardware outputs 3/4 only.</small></div>
-<div class="signal-path blue"><span><strong>BLUE — Playback.</strong> SSL 2+ RCA OUT 3/4 → TL Audio Fat Track CH1/CH2 LINE inputs</span></div>
-<div class="signal-node"><strong>TL Audio Fat Track · Stereo bus</strong><small>CH1 pan hard left; CH2 pan hard right. Master insert available.</small></div>
-<div class="signal-path orange"><span><strong>ORANGE — Insert send.</strong> Fat Track MASTER INSERT SEND L/R → SSL INPUT 1/2 (LINE)</span></div>
-<div class="signal-node"><strong>Mac · Bitwig Track B</strong><small>SSL inputs 1/2 → Bitwig Dynamics or Ozone 9 → SSL outputs 1/2. Live input monitoring on.</small></div>
-<div class="signal-path purple"><span><strong>PURPLE — Insert return.</strong> SSL balanced OUT 1/2 → Fat Track MASTER INSERT RETURN L/R</span></div>
-<div class="signal-node"><strong>TL Audio Fat Track · Master output</strong><small>Master insert engaged. Monitor final stereo output level.</small></div>
-<div class="signal-path green"><span><strong>GREEN — Record.</strong> Fat Track MAIN OUT L/R → existing stereo-combining cable → TP-7 LINE 1 (stereo)</span></div>
-<div class="signal-node"><strong>Teenage Engineering TP-7</strong><small>New stereo master recording. Preserve the unprocessed original separately.</small></div>
-<figcaption>The diagram illustrates signal flow rather than the precise physical positions of the sockets. Each L/R connection uses a pair of mono connections, except the single stereo input at the TP-7.</figcaption>
+<h2 id="performance">Hearing the movement</h2>
+<div class="record-intro">
+<div>
+<p>TriMicroCluster generates musical material, but the sound doesn't end at its software outputs. For this performance, the low voices passed through external BugBrand analogue processors. Small changes in level and response bring different parts of the spectrum forward, changing how the sustained tones feel over time.</p>
+<p>Rather than writing a conventional sequence of notes, the performance allows a simple relationship to remain present while its internal detail develops. The physical circuitry becomes part of the composition, not just an effect added afterwards.</p>
+</div>
+<figure class="performance-photo glass">
+<img src="assets/images/analogue-valve-performance.webp" width="245" height="360" loading="lazy" alt="Close-up photograph of the blue TL Audio Fat Track and adjacent analogue hardware, with patch cables connected across the mixer.">
+<figcaption>A close view of the analogue mixing setup used around the TMC recordings. Photograph from the artist's studio.</figcaption>
 </figure>
-<h2 id="cables">Cable checklist</h2>
-<div class="route-table-wrap"><table class="route-table"><thead><tr><th>Connection</th><th>From</th><th>To</th><th>Cable</th></tr></thead><tbody>
-<tr><td>Playback</td><td>SSL RCA OUT 3/4</td><td>Fat Track LINE IN CH1/CH2</td><td>2 × RCA to ¼″ TS</td></tr>
-<tr><td>Insert send</td><td>Fat Track MASTER SEND L/R</td><td>SSL INPUT 1/2</td><td>2 × balanced ¼″ TRS</td></tr>
-<tr><td>Insert return</td><td>SSL balanced OUT 1/2</td><td>Fat Track MASTER RETURN L/R</td><td>2 × balanced ¼″ TRS</td></tr>
-<tr><td>Recording</td><td>Fat Track MAIN OUT L/R</td><td>TP-7 LINE 1</td><td>Existing dual-output-to-stereo cable; check pinout and levels</td></tr>
-</tbody></table></div>
-<p class="small-note">The Fat Track's stereo master has separate send and return jacks. This is different from a conventional single-jack TRS channel insert.</p>
-<h2 id="bitwig">Two-track Bitwig setup</h2>
-<p><strong>Track A — Original WAV:</strong> stereo playback to SSL outputs 3/4 only. <strong>Track B — Live compressor:</strong> stereo input from SSL 1/2, compressor enabled after an initial bypass test, stereo output to SSL 1/2, input monitoring on. Do not also route Track A to outputs 1/2.</p>
-<p>Keep SSL input 1/2 set to LINE, turn 48V and 4K off, and set the SSL direct-monitor balance to USB so the dry input is not mixed into the return. The SSL's main monitor level affects outputs 1/2, so use a repeatable calibrated setting and begin quietly.</p>
-<h2 id="verify">What the master should preserve</h2>
-<p>For this music, compression should follow the slow changes rather than erase them. Start around 1.5:1 with modest gain reduction, compare bypassed and compressed versions at matched loudness, and retain the performance's space and harmonic movement. A digital limiter inserted before the Fat Track's output stage does not guarantee the recorded WAV's final true-peak ceiling.</p>
-<p>Make a brief low-level test pass to the TP-7, then transfer the new stereo WAV to Bitwig or Ozone for final peak, loudness and channel checks. Do not treat the suggested settings or routing as a proven mastering recipe until the specific hardware path has been tested.</p>
-<h2 id="release">Hear the piece · Bandcamp release planned</h2>
-<div class="route-status"><strong>Status: recording captured; release details not yet finalised</strong>The track does not yet have a confirmed title, public Bandcamp release link or final asking price. There is no downloadable WAV or placeholder purchase link on this website.</div>
-<p>This performance is intended to be shared as a <strong>paid, lossless download via Bandcamp</strong>, with a small minimum price and the option for listeners to pay more. Once the release is published, this section can show an official Bandcamp embedded player and a direct purchase link. Bandcamp will handle streaming and downloads rather than this site hosting the master WAV.</p>
-<p>An accompanying photograph of the envelope waveform captured on an oscilloscope may be added here after it has been supplied and verified, alongside the final track title, recording context and date.</p>
+</div>
+<h2 id="voices">Two independently shaped voices</h2>
+<p>Both voices began in the TMC system, but their analogue paths were deliberately different.</p>
+<div class="voice-pair">
+<section class="voice-card glass">
+<span class="voice-label">Low voice</span><h3>SubHarm</h3>
+<div class="voice-route">SubHarm → PreAmp → LPG → TX-6</div>
+<p>The preamplified signal passed through a low-pass gate. A dedicated envelope was patched to the gate's MOD input, making the changing response of the LPG part of the sound.</p>
+</section>
+<section class="voice-card glass">
+<span class="voice-label">Sustained voice</span><h3>Drone</h3>
+<div class="voice-route">Drone → PreAmp → Drive VCA</div>
+<p>The drone entered a separate preamplifier and Drive VCA. Its own envelope was connected to CV2, giving this voice a different dynamic movement from SubHarm.</p>
+</section>
+</div>
+<h2 id="pulse">One pulse, different motion</h2>
+<p>The two envelopes used the same pulse but were separate from one another. Both were set to respond slowly, with further waveform modulation introducing movement. That created a shared underlying time without forcing the two voices to rise, fall or change their harmonics identically.</p>
+<p>It's an important part of the musical idea: a simple sustained relationship can stay recognisable while the texture inside it continues to shift. An oscilloscope image of the modulation may be included in a future closer look at this patch.</p>
+<h2 id="recorded">Capturing the performance</h2>
+<p>The voices joined the wider live mix on the Teenage Engineering TX-6, where level moves and effects could be performed as the piece unfolded. The TP-7 captured the resulting stereo recording. This means the balance changes are part of the performance itself, rather than something reconstructed later from isolated stems.</p>
+<p>A further experiment is to pass that stereo recording through the TL Audio Fat Track, using a gentle digital compressor in its master insert loop, and record the result back onto the TP-7. The aim isn't to make the music aggressively loud: it's to see whether very light processing can bring the piece together while keeping its quieter details intact.</p>
+<h2 id="release">A recording to spend time with</h2>
+<div class="release-strip glass">
+<h3>Coming to Bandcamp</h3>
+<p>This performance is being prepared for a Bandcamp release. When it's published, you'll be able to listen here and purchase a lossless download through Bandcamp. The intention is to offer the music for a modest price, with the option to support the work further.</p>
+</div>
+<p>The title and release details will follow the music rather than the other way round. For now, this page shares part of the process behind the recording.</p>
+<h2 id="details">For those interested in the signal flow</h2>
+<p>The following is a practical outline of the additional mastering path being explored. It sits alongside the performance notes rather than describing a step already used on the recorded piece.</p>
+<details class="detail-panel glass">
+<summary>Show the Bitwig / SSL 2+ / Fat Track / TP-7 mastering connections</summary>
+<p>In this proposed setup, the original stereo WAV plays from Bitwig into the TL Audio Fat Track. The Fat Track's stereo master insert sends the mix to Bitwig for compression, then receives it back before the final stereo signal is recorded onto the TP-7.</p>
+<div class="flow-note"><strong>Playback:</strong> Bitwig WAV → SSL outputs 3/4 → Fat Track channels 1/2.<br>
+<strong>Insert send:</strong> Fat Track master SEND L/R → SSL inputs 1/2 → Bitwig compressor.<br>
+<strong>Insert return:</strong> SSL balanced outputs 1/2 → Fat Track master RETURN L/R.<br>
+<strong>Recording:</strong> Fat Track MAIN OUT L/R → stereo line input on the TP-7.</div>
+<table><thead><tr><th>Connection</th><th>Cable type</th></tr></thead><tbody>
+<tr><td>SSL RCA OUT 3/4 → Fat Track CH1/CH2 LINE</td><td>2 × RCA–¼″ TS</td></tr>
+<tr><td>Fat Track master SEND L/R → SSL INPUT 1/2</td><td>2 × balanced TRS</td></tr>
+<tr><td>SSL balanced OUT 1/2 → Fat Track master RETURN L/R</td><td>2 × balanced TRS</td></tr>
+<tr><td>Fat Track MAIN OUT L/R → TP-7 LINE 1</td><td>Existing dual-output-to-stereo cable</td></tr>
+</tbody></table>
+<p>Bitwig uses one stereo track for the original WAV (output 3/4) and a second, input-monitored stereo track for compression (input and output 1/2). SSL direct monitoring is disabled for the loop. Levels and the final recorded true peaks still need to be checked before any release master is approved.</p>
+</details>
+<p class="reader-footnote">The analogue voice patch above is drawn from the artist's performance notes. The extra hybrid mastering route is an experiment under consideration, not a claim about how this particular recording was already mastered.</p>
 <p class="next-reading"><a href="listen.html">Listening studies →</a> · <a href="journal.html">Development journal →</a></p>
 </article></div></main>
-<footer class="footer frame"><div>TriMicroCluster · Instrument, music and creative process.<br>Working notes · 7 November 2026.</div><div><a href="index.html">Home</a><a href="listen.html">Listen</a><a href="process.html">Creative process</a></div></footer>
+<footer class="footer frame"><div>TriMicroCluster · Instrument, music and creative process.<br>Recording article · November 2026.</div><div><a href="index.html">Home</a><a href="listen.html">Listen</a><a href="process.html">Creative process</a></div></footer>
 </body></html>
