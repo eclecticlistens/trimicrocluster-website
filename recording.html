@@ -47,7 +47,7 @@
 <p class="lede">Envelope pulses drive a heartbeat-like motion across Drone and SubHarm. Opening the low-pass gate allows individual notes to emerge, sometimes creating passages of several distinct tones.</p>
 </section>
 <div class="columns">
-<aside class="toc glass" aria-label="On this page"><h2>On this page</h2><a href="#performance">The performance</a><a href="#voices">The two voices</a><a href="#pulse">One pulse, different motion</a><a href="#recorded">Capturing the mix</a><a href="#release">Listening &amp; release</a><a href="#details">Technical signal flow</a></aside>
+<aside class="toc glass" aria-label="On this page"><h2>On this page</h2><a href="#performance">The performance</a><a href="#voices">The two voices</a><a href="#pulse">One pulse, different motion</a><a href="#scope">Seeing the envelopes</a><a href="#recorded">Capturing the mix</a><a href="#release">Listening &amp; release</a><a href="#details">Technical signal flow</a></aside>
 <article class="prose" id="article">
 <h2 id="performance">Hearing the movement</h2>
 <div class="record-intro">
@@ -56,8 +56,8 @@
 <p>Opening the low-pass gate can let more of the individual notes through, briefly revealing a subtle, multi-note musical passage before the sound returns to a more blended, pulsing texture. Those changes are played as part of the performance. The voices join the TX-6 live mix, where fader movements and effects shape the stereo recording on the TP-7.</p>
 </div>
 <figure class="performance-photo glass">
-<img src="assets/images/tmc-bugbrand-fat-track-studio.webp" width="900" height="1190" loading="lazy" alt="Studio photograph of blue BugBrand analogue modules above a TL Audio Fat Track mixer, with a Bitbox Micro and Expert Sleepers ES-8 patched below.">
-<figcaption>The recording setup: BugBrand analogue processors above the blue TL Audio Fat Track, with Bitbox Micro and ES-8 patched below. Photograph from the artist's studio.</figcaption>
+<img src="assets/images/tmc-bugbrand-fat-track-studio.webp" width="900" height="1190" loading="lazy" alt="Earlier studio photograph showing BugBrand analogue modules above the TL Audio Fat Track; the current Drone and SubHarm patch routes are described in the text below.">
+<figcaption>BugBrand analogue processing in the artist’s studio. This is an earlier studio overview; the yellow Drone and red SubHarm cables described below refer to the 7 November 2026 patch photographs.</figcaption>
 </figure>
 </div>
 <h2 id="voices">Two independently shaped voices</h2>
@@ -65,18 +65,25 @@
 <div class="voice-pair">
 <section class="voice-card glass">
 <span class="voice-label">Low voice</span><h3>SubHarm</h3>
-<div class="voice-route">SubHarm → PreAmp → LPG → TX-6</div>
-<p>The preamplified signal passed through a low-pass gate. A dedicated envelope was patched to its MOD input. Opening the LPG can reveal more distinct notes within the SubHarm material, changing the perceived relationship with Drone.</p>
+<div class="voice-route">SubHarm → PreAmp → LPG (filter mode) → TX-6</div>
+<p>In the photographed patch, the <strong>red audio cable</strong> takes SubHarm to the LPG. Its mode switch is up, selecting <strong>filter</strong> rather than filter/gate or gate. An envelope modulates the filter; opening it lets more of the underlying notes and upper harmonics become audible, changing the relationship with Drone.</p>
 </section>
 <section class="voice-card glass">
 <span class="voice-label">Interacting voice</span><h3>Drone</h3>
-<div class="voice-route">Drone → PreAmp → Drive VCA</div>
-<p>The drone entered a separate preamplifier and Drive VCA. Its own envelope was connected to CV2, giving this voice a different dynamic movement from SubHarm.</p>
+<div class="voice-route">Drone → PreAmp → Drive VCA</div><p class="reader-footnote"><strong>Yellow audio cable in the photographed patch.</strong></p>
+<p>The drone enters a separate preamplifier and the Drive VCA. Its own envelope controls the VCA, giving the voice a short, sharply articulated pulse and a different dynamic movement from SubHarm.</p>
 </section>
 </div>
 <h2 id="pulse">One pulse, different motion</h2>
 <p>The heartbeat effect comes from the ENV pulses, rather than acoustic beating between Drone and SubHarm frequencies. A shared pulse drives two separate, slowly responding envelopes: one modulates the SubHarm LPG and the other controls the Drone Drive VCA. Together they create the rhythmic swell and release heard across the voices, even though each analogue path responds differently.</p>
-<p>The result can move between a blended, heartbeat-like pulse and passages in which multiple notes become individually audible as the LPG opens. That transition is a musical gesture in its own right. An oscilloscope image of the control modulation may be included in a future closer look at the patch.</p>
+<p>The result can move between a blended, heartbeat-like pulse and passages in which more notes and harmonics become audible as the SubHarm LPG filter opens. That transition is a musical gesture in its own right. The yellow and red cables identify the two audio routes in this particular patch photograph, not a colour scheme that has to be followed when repatching.</p>
+<h2 id="scope">Seeing the envelopes</h2>
+<p>A Tektronix TDS 2012B oscilloscope was connected <strong>directly to the two BugBrand envelope outputs</strong>, so the traces show the slow control-voltage shapes rather than the audio waves themselves.</p>
+<div class="voice-pair">
+<section class="voice-card glass"><span class="voice-label">Oscilloscope CH1 · yellow trace</span><h3>Drone envelope</h3><p>A narrow, sharp pulse that rises quickly and drops away almost immediately. This short envelope helps give the Drive VCA path its precise articulation.</p></section>
+<section class="voice-card glass"><span class="voice-label">Oscilloscope CH2 · blue trace</span><h3>SubHarm envelope</h3><p>A broader response with a short rounded top and a much longer decay. Through the LPG in filter mode it produces a more gradual change in the tonal material that passes through.</p></section>
+</div>
+<p class="reader-footnote">The two envelope events appeared closely aligned on the oscilloscope. No precise offset is claimed here. The <strong>blue scope trace</strong> belongs to SubHarm even though the <strong>physical audio patch cable is red</strong>: scope colours and cable colours serve different purposes.</p>
 <h2 id="recorded">Capturing the performance</h2>
 <p>The voices joined the wider live mix on the Teenage Engineering TX-6, where level moves and effects could be performed as the piece unfolded. The TP-7 captured the resulting stereo recording. This means the balance changes are part of the performance itself, rather than something reconstructed later from isolated stems.</p>
 <p>A further experiment is to pass that stereo recording through the TL Audio Fat Track, using a gentle digital compressor in its master insert loop, and record the result back onto the TP-7. The aim isn't to make the music aggressively loud: it's to see whether very light processing can bring the piece together while keeping its quieter details intact.</p>
