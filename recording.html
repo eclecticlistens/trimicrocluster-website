@@ -31,6 +31,7 @@
 .detail-panel th,.detail-panel td{padding:10px 8px;border-bottom:1px solid rgba(70,80,73,.18);text-align:left;vertical-align:top}
 .detail-panel th{font-size:12px}
 .flow-note{padding:12px 15px;background:rgba(255,255,255,.6);border-radius:9px;line-height:1.7;font-size:13px}
+.wiring-photo{margin:17px 0 22px;padding:12px;background:rgba(255,255,255,.57)}.wiring-photo img{width:100%;max-width:840px;height:auto;display:block;margin:auto;border-radius:8px}.wiring-photo figcaption{font-size:12px;color:#62706a;line-height:1.65;padding:11px 7px 0}
 .reader-footnote{color:#647069;font-size:13px}
 @media(max-width:710px){.record-intro{grid-template-columns:1fr}.performance-photo{max-width:100%}.voice-pair{grid-template-columns:1fr}.release-strip{padding:19px}.detail-panel{padding:14px}}
 </style>
@@ -90,6 +91,10 @@
 <details class="detail-panel glass">
 <summary>Show the Bitwig / SSL 2+ / Fat Track / TP-7 mastering connections</summary>
 <p>In this proposed setup, the original stereo WAV plays from Bitwig into the TL Audio Fat Track. The Fat Track's stereo master insert sends the mix to Bitwig for compression, then receives it back before the final stereo signal is recorded onto the TP-7.</p>
+<figure class="wiring-photo glass">
+<img src="assets/images/tmc-ssl-fat-track-tp7-cabling.webp" width="1120" height="1417" loading="lazy" alt="Colour-coded mastering diagram with Mac and Bitwig, SSL 2+, TL Audio Fat Track and TP-7. Blue denotes original WAV playback to Fat Track channels 1 and 2; orange denotes master insert send to SSL inputs 1 and 2; purple denotes processed return to Fat Track; green denotes final stereo recording to TP-7.">
+<figcaption>Visual overview of the proposed Bitwig mastering insert. This is a schematic illustration rather than a port-accurate hardware photograph: use the connection table below for actual socket labels and cable routing.</figcaption>
+</figure>
 <div class="flow-note"><strong>Playback:</strong> Bitwig WAV → SSL outputs 3/4 → Fat Track channels 1/2.<br>
 <strong>Insert send:</strong> Fat Track master SEND L/R → SSL inputs 1/2 → Bitwig compressor.<br>
 <strong>Insert return:</strong> SSL balanced outputs 1/2 → Fat Track master RETURN L/R.<br>
